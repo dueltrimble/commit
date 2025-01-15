@@ -50,3 +50,7 @@ for i in range(0, len(commit_obj['Description']), 72):
 sp.run(['git.exe', 'commit', 
 '-m', new_commit_title,
 '-m', new_commit_desc], cwd="../")
+
+# If the file exists, delete it again.
+if os.path.exists(commit_json_path):
+    os.remove(commit_json_path)
